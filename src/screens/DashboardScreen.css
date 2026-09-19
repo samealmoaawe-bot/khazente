@@ -1,0 +1,198 @@
+/* ============================================================================
+   DashboardScreen.css — يعتمد على متغيرات khizanti_design_tokens.css
+   ============================================================================ */
+
+.kh-dashboard {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.kh-dashboard__hint,
+.kh-dashboard__error-state {
+  text-align: center;
+  color: var(--color-ink-muted);
+  padding: var(--space-6) var(--space-4);
+}
+
+.kh-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.kh-dashboard__header h1 { font-size: 1.3rem; color: var(--color-primary); }
+
+/* -------- الرصيد الحالي (أهم عنصر في الشاشة) -------- */
+.kh-dashboard__hero {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+.kh-dashboard__hero-label {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 0 0 var(--space-1);
+}
+.kh-dashboard__hero-amount {
+  font-size: 2.4rem;
+  color: var(--color-brass);
+  margin: 0 0 var(--space-3);
+}
+.kh-dashboard__hero-amount span {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.kh-dashboard__reconciliation-row {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-surface);
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+.kh-dashboard__reconciliation-date {
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+/* -------- الشارات (Chips) -------- */
+.kh-chip {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.kh-chip--success { background: #dcefe3; color: var(--color-success); }
+.kh-chip--danger  { background: #f7e6e1; color: var(--color-danger); }
+.kh-chip--brass   { background: #f1e6d3; color: var(--color-brass); }
+
+/* -------- إجراءات سريعة -------- */
+.kh-dashboard__quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.kh-quick-action {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-surface);
+  cursor: pointer;
+}
+.kh-quick-action.kh-accent--in { background: var(--color-success); }
+.kh-quick-action.kh-accent--out { background: var(--color-danger); }
+.kh-quick-action.kh-accent--transfer { background: var(--color-brass); }
+
+/* -------- إحصائيات -------- */
+.kh-dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.kh-stat {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  text-align: center;
+}
+.kh-stat__label { font-size: 0.78rem; color: var(--color-ink-muted); margin: 0 0 var(--space-1); }
+.kh-stat__value { font-size: 1.15rem; margin: 0; }
+.kh-stat__value--in { color: var(--color-success); }
+.kh-stat__value--out { color: var(--color-danger); }
+
+/* -------- أقسام عامة (الحسابات / آخر العمليات) -------- */
+.kh-dashboard__section { margin-bottom: var(--space-5); }
+.kh-dashboard__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+.kh-dashboard__section-header h2 { font-size: 1.05rem; color: var(--color-primary); }
+.kh-link {
+  background: none;
+  border: none;
+  color: var(--color-brass);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.kh-dashboard__accounts,
+.kh-dashboard__transactions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.kh-dashboard__account-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.kh-dashboard__accounts li:last-child .kh-dashboard__account-row { border-bottom: none; }
+.kh-dashboard__account-row:hover { background: var(--color-primary-soft); }
+
+.kh-dashboard__transactions > li {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.kh-dashboard__transactions > li:last-child { border-bottom: none; }
+.kh-dashboard__tx-row--muted { opacity: 0.5; }
+
+.kh-dashboard__tx-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+.kh-dashboard__tx-account {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.92rem;
+}
+.kh-dashboard__tx-amount { font-size: 0.92rem; }
+.kh-tx--in { background: #dcefe3; color: var(--color-success); }
+.kh-tx--out { background: #f7e6e1; color: var(--color-danger); }
+.kh-tx--transfer { background: #f1e6d3; color: var(--color-brass); }
+.kh-tx--neutral { background: var(--color-primary-soft); color: var(--color-ink-muted); }
+
+.kh-dashboard__tx-time {
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+}
+
+@media (max-width: 420px) {
+  .kh-dashboard__hero-amount { font-size: 1.9rem; }
+}

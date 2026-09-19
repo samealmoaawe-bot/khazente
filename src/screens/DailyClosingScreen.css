@@ -1,0 +1,86 @@
+/* ============================================================================
+   DailyClosingScreen.css — إضافات فوق CashMovementScreen.css و DashboardScreen.css
+   ============================================================================ */
+
+.kh-closing {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.kh-closing__hint {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  background: var(--color-primary-soft);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.kh-closing__date-field { margin-bottom: var(--space-4); }
+.kh-closing__date-field input {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+}
+
+.kh-closing__preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.kh-closing__preview > div {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  text-align: center;
+}
+.kh-closing__preview span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-1);
+}
+
+.kh-closing__result {
+  background: #dcefe3;
+  color: var(--color-success);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.kh-closing__history { margin-top: var(--space-5); }
+.kh-closing__history h2 { font-size: 1.05rem; color: var(--color-primary); margin-bottom: var(--space-2); }
+.kh-closing__history ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.kh-closing__history-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.kh-closing__history-row:last-child { border-bottom: none; }
+.kh-closing__history-date { flex: 1; font-size: 0.85rem; color: var(--color-ink-muted); }
+
+.kh-closing__status {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-weight: 600;
+}
+.kh-closing__status--closed { background: #dcefe3; color: var(--color-success); }
+.kh-closing__status--draft { background: #f1e6d3; color: var(--color-brass); }

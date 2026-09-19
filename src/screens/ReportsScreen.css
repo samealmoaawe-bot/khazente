@@ -1,0 +1,122 @@
+/* ============================================================================
+   ReportsScreen.css — يشمل قواعد @media print لإخراج A4 احترافي (يُستخدم أيضًا
+   كمصدر PDF عبر "حفظ كـ PDF" من نافذة طباعة المتصفح، انظر khizanti_lib_reports.ts)
+   ============================================================================ */
+
+.kh-reports {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.kh-reports__controls {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.kh-reports__controls select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.kh-reports__dates {
+  display: flex;
+  gap: var(--space-2);
+}
+.kh-reports__dates .kh-field { flex: 1; }
+.kh-reports__dates input[type='date'] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.kh-reports__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+/* -------- منطقة التقرير المعروضة على الشاشة -------- */
+.kh-report-print-area {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  overflow-x: auto;
+}
+
+.kh-report-print-header { text-align: center; margin-bottom: var(--space-4); }
+.kh-report-print-header h2 { color: var(--color-primary); font-size: 1.2rem; margin-bottom: var(--space-1); }
+.kh-report-print-header p { margin: 2px 0; color: var(--color-ink-muted); font-size: 0.9rem; }
+.kh-report-print-meta { font-size: 0.78rem !important; }
+
+.kh-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.kh-report-table th, .kh-report-table td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  text-align: right;
+}
+.kh-report-table th {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.kh-report-empty { text-align: center; color: var(--color-ink-muted); }
+
+.kh-report-totals {
+  width: 100%;
+  margin-top: var(--space-4);
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.kh-report-totals td {
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+.kh-report-totals td:first-child { color: var(--color-ink-muted); }
+.kh-report-totals td:last-child { text-align: left; font-weight: 700; color: var(--color-brass); }
+
+/* ============================================================================
+   قواعد الطباعة: إخفاء كل شيء عدا منطقة التقرير، وتنسيق A4
+   ============================================================================ */
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+
+  body * { visibility: hidden; }
+
+  .kh-report-print-area,
+  .kh-report-print-area * { visibility: visible; }
+
+  .kh-report-print-area {
+    position: absolute;
+    inset: 0;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .kh-no-print { display: none !important; }
+
+  .kh-report-table, .kh-report-totals { font-size: 11pt; }
+  .kh-report-table th { background: #eee !important; -webkit-print-color-adjust: exact; }
+}
