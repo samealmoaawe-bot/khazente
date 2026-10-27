@@ -1,0 +1,30 @@
+/* ============================================================================
+   SyncStatusBanner.css
+   ============================================================================ */
+
+.kh-sync-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  background: var(--color-brass);
+  color: var(--color-surface);
+  font-size: 0.85rem;
+  padding: var(--space-2) var(--space-4);
+  text-align: center;
+}
+
+.kh-sync-banner--offline {
+  background: var(--color-danger);
+}
+
+.kh-sync-banner__retry {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}

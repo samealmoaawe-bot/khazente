@@ -1,0 +1,37 @@
+/* ============================================================================
+   AuthScreen.css
+   ============================================================================ */
+
+.kh-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.kh-auth__card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6) var(--space-5);
+  text-align: center;
+}
+
+.kh-auth__title { font-size: 1.8rem; color: var(--color-primary); margin-bottom: var(--space-1); }
+.kh-auth__subtitle { color: var(--color-ink-muted); margin-bottom: var(--space-5); font-size: 0.92rem; }
+
+.kh-auth__form { display: flex; flex-direction: column; gap: var(--space-3); text-align: right; }
+
+.kh-auth__submit { width: 100%; padding: var(--space-3); font-size: 1rem; margin-top: var(--space-2); }
+
+.kh-auth__switch {
+  background: none;
+  border: none;
+  color: var(--color-brass);
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: var(--space-4);
+}

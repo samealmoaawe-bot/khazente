@@ -1,0 +1,165 @@
+/* ============================================================================
+   CashMovementScreen.css — يعتمد على متغيرات khizanti_design_tokens.css
+   ============================================================================ */
+
+.kh-movement {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* لون التمييز يختلف بين قبض (أخضر) وصرف (طوبي) دون تكرار الشيفرة */
+.kh-accent--in { --accent: var(--color-success); }
+.kh-accent--out { --accent: var(--color-danger); }
+
+.kh-movement__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+.kh-movement__header h1 {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+.kh-movement__header span { width: 56px; } /* موازنة بصرية مقابل زر الرجوع */
+
+/* -------- خطوة اختيار الحساب -------- */
+.kh-movement__pick input[type='search'] {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+.kh-movement__pick input[type='search']:focus { border-color: var(--accent); }
+
+.kh-movement__account-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.kh-movement__account-item {
+  width: 100%;
+  text-align: right;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.kh-movement__account-item:last-child { border-bottom: none; }
+.kh-movement__account-item:hover { background: var(--color-primary-soft); }
+
+.kh-movement__hint {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-ink-muted);
+}
+
+/* -------- خطوة إدخال البيانات -------- */
+.kh-movement__change-account {
+  display: block;
+  width: 100%;
+  text-align: right;
+  background: var(--color-primary-soft);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-4);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.kh-movement__form .kh-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+
+.kh-movement__form input,
+.kh-movement__form textarea {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-ink);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  resize: vertical;
+}
+.kh-movement__form input:focus,
+.kh-movement__form textarea:focus {
+  border-color: var(--accent);
+}
+
+.kh-movement__error {
+  background: #f7e6e1;
+  color: var(--color-danger);
+  border: 1px solid #e3b7a8;
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: 0.9rem;
+}
+
+.kh-movement__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.kh-btn--action {
+  flex: 1;
+  background: var(--accent);
+  color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.kh-btn--action:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* -------- شاشة النجاح -------- */
+.kh-movement__success {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.kh-movement__success-title {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+}
+.kh-movement__success-number {
+  color: var(--color-ink-muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: var(--space-2);
+}
+.kh-movement__success-amount {
+  font-size: 1.8rem;
+  color: var(--color-brass);
+  margin-bottom: var(--space-4);
+}

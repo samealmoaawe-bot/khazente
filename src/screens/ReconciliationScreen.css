@@ -1,0 +1,68 @@
+/* ============================================================================
+   ReconciliationScreen.css — إضافات فوق CashMovementScreen.css و DashboardScreen.css
+   ============================================================================ */
+
+.kh-reconcile {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.kh-reconcile__info {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.kh-reconcile__info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) 0;
+}
+.kh-reconcile__info-row:not(:last-child) { border-bottom: 1px solid var(--color-border); }
+.kh-reconcile__info-row span { color: var(--color-ink-muted); font-size: 0.9rem; }
+
+.kh-reconcile__result {
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+.kh-reconcile__result-hint {
+  font-size: 0.82rem;
+  color: var(--color-ink-muted);
+  margin: 0;
+}
+
+.kh-reconcile__history { margin-top: var(--space-5); }
+.kh-reconcile__history h2 { font-size: 1.05rem; color: var(--color-primary); margin-bottom: var(--space-2); }
+.kh-reconcile__history ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.kh-reconcile__history-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.kh-reconcile__history-row:last-child { border-bottom: none; }
+.kh-reconcile__history-date {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+}

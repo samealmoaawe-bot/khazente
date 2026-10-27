@@ -1,0 +1,29 @@
+/* ============================================================================
+   TransferScreen.css — إضافات فوق CashMovementScreen.css المشترك
+   ============================================================================ */
+
+/* لون تمييز محايد للتحويل — ليس دخلاً ولا مصروفًا */
+.kh-accent--transfer { --accent: var(--color-brass); }
+
+.kh-transfer__step-label {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.kh-transfer__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.kh-transfer__summary .kh-movement__change-account {
+  flex: 1;
+  margin-bottom: 0;
+  text-align: center;
+}
+.kh-transfer__arrow {
+  color: var(--color-brass);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}

@@ -1,0 +1,70 @@
+/* ============================================================================
+   BackupScreen.css — إضافات فوق CashMovementScreen.css / DashboardScreen.css /
+   AccountsScreen.css (kh-modal*)
+   ============================================================================ */
+
+.kh-backup {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.kh-backup__hint {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  background: var(--color-primary-soft);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.kh-backup__create {
+  width: 100%;
+  margin-bottom: var(--space-4);
+}
+
+.kh-backup__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.kh-backup__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+.kh-backup__row:last-child { border-bottom: none; }
+
+.kh-backup__row-main { display: flex; flex-direction: column; gap: 2px; }
+.kh-backup__date { font-size: 0.92rem; color: var(--color-ink); }
+.kh-backup__size { font-size: 0.75rem; color: var(--color-ink-muted); }
+
+.kh-backup__row-actions { display: flex; align-items: center; gap: var(--space-2); }
+.kh-backup__delete {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.kh-backup__preview-summary {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.kh-backup__preview-summary strong { color: var(--color-ink); }
